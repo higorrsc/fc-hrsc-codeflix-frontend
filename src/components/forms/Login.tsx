@@ -1,8 +1,8 @@
 'use client';
 
+import { AuthForm } from '@/components/forms/Auth';
 import { useRouter } from 'next/navigation';
-import { FormEvent, useState } from 'react';
-import { AuthForm } from './AuthForm';
+import React, { useState } from 'react';
 
 type ServerError = {
   message: string;
@@ -12,7 +12,7 @@ export function LoginForm() {
   const router = useRouter();
   const [errors, setErrors] = useState<string[]>([]);
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
