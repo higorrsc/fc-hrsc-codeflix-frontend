@@ -1,0 +1,8 @@
+### try login with invalid credentials
+POST http://localhost:3000/auth/login/api
+Content-Type: application/json
+
+{
+  "email": "john.doe@example.com",
+  "password": "123456"
+}
