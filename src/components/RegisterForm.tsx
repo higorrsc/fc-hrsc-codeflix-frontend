@@ -2,11 +2,11 @@
 import React from 'react';
 import { AuthForm } from './AuthForm';
 
-export function LoginForm() {
+export function RegisterForm() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    alert('submit from login form');
+    alert('submit from register form');
     e.preventDefault();
   };
 
-  return <AuthForm formType='login' onSubmit={handleSubmit} />;
+  return <AuthForm formType='register' onSubmit={handleSubmit} />;
 }
