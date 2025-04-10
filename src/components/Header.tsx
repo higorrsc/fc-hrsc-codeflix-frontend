@@ -4,7 +4,7 @@ import { Logo } from './Logo';
 import { NavLinks } from './NavLinks';
 import { UserProfile } from './UserProfile';
 
-export default function Header() {
+export const Header = () => {
   const isScrolled = useScroll();
 
   return (
@@ -18,4 +18,4 @@ export default function Header() {
       <UserProfile />
     </header>
   );
-}
+};

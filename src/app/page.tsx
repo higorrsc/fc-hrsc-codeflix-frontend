@@ -1,5 +1,5 @@
 import { Banner } from '@/components/Banner';
-import Header from '@/components/Header';
+import { Header } from '@/components/Header';
 import { MovieRow } from '@/components/MovieRow';
 
 export default function Home() {
