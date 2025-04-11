@@ -23,7 +23,7 @@ export function buildQueryString(param: ApiQueryParams) {
   return `?${new URLSearchParams(Object.fromEntries(queryString)).toString()}`;
 }
 
-export async function apiRequest(
+export async function apiRequest<T>(
   endpoint: string,
   query: ApiQueryParams = {},
   options: RequestOptions = {}
