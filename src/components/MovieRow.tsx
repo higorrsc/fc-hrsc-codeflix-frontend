@@ -1,4 +1,5 @@
 import { Movies } from '@/types/movie';
+import { MovieCard } from './MovieCard';
 
 type MovieRowProps = {
   sectionTitle: string;
@@ -13,9 +14,9 @@ export const MovieRow = ({ sectionTitle, movies }: MovieRowProps) => {
           {sectionTitle}
         </h2>
       </div>
-      <div className='no-scrollbar -ml-6 flex space-x-4 overflow-x-scroll p-6'>
-        {movies.map((movie, index) => (
-          <h1 key={index}>{movie.title}</h1>
+      <div className='grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8'>
+        {movies.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
     </div>
