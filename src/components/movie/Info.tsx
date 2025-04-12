@@ -1,3 +1,4 @@
+import { MovieRating } from '@/components/movie/Rating';
 import { Movie } from '@/types/movie';
 import {
   ChevronDownIcon,
@@ -31,11 +32,11 @@ export const MovieInfo = ({ movie }: { movie: Movie }) => {
       </div>
       <div className='mt-4 flex flex-col gap-2 text-sm'>
         <div className='flex flex-row items-center gap-2'>
-          <SpeakerWaveIcon className='w-4' />
+          <SpeakerWaveIcon className='w-4' /> Double Atmos 5.1 4K
         </div>
         <div className='flex flex-row items-center gap-2'>
           <UserGroupIcon className='w-4' />
-          {/* <MovieRating rating={movie.rating} /> */}
+          <MovieRating rating={movie.rating} />
         </div>
       </div>
       <div className='mt-4 flex flex-row items-center gap-2 text-[8px] text-white lg:text-sm'>
