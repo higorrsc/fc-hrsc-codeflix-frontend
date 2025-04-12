@@ -1,6 +1,6 @@
 import { Banner } from '@/components/Banner';
 import { Header } from '@/components/Header';
-import { MovieRow } from '@/components/MovieRow';
+import { MovieRow } from '@/components/movie/Row';
 import { getFeaturedMovie, getMoviesByGenre } from '@/services/MovieService';
 
 export default async function Home() {

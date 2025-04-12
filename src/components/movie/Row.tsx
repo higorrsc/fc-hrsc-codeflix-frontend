@@ -1,5 +1,5 @@
+import { MovieCard } from '@/components/movie/Card';
 import { Movies } from '@/types/movie';
-import { MovieCard } from './MovieCard';
 
 type MovieRowProps = {
   sectionTitle: string;
