@@ -38,9 +38,10 @@ export function LoginForm() {
 
       const payload: ServerError[] = await res.json();
       console.log(payload);
-    } catch (error: any) {
+    } catch (error) {
       console.error(error);
       setErrors(['An unknown error occurred. Please try again.']);
+      console.log(errors);
     }
   };
 

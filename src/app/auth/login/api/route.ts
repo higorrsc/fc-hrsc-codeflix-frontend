@@ -6,8 +6,8 @@ export async function POST(req: NextRequest) {
     const { email, password } = loginFormSchema.parse(await req.json());
     console.log('email: ' + email, 'password: ' + password);
     return new NextResponse('It works');
-  } catch (err: any) {
-    console.log(err.message);
+  } catch (err) {
+    console.error(err);
     return new NextResponse(err.message, { status: 400 });
   }
 }

@@ -28,7 +28,7 @@ export function buildQueryString(param: ApiQueryParams) {
   return queryString ? `?${queryString}` : '';
 }
 
-export async function apiRequest<T>(
+export async function apiRequest(
   endpoint: string,
   query: ApiQueryParams = {},
   options: RequestOptions = {}
