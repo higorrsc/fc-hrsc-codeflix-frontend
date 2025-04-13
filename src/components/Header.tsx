@@ -4,6 +4,7 @@ import { NavLinks } from '@/components/NavLinks';
 import { UserProfile } from '@/components/UserProfile';
 import { SearchForm } from '@/components/forms/Search';
 import { useScroll } from '@/hooks/useScroll';
+import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import { Logo } from './Logo';
@@ -31,7 +32,9 @@ export const Header = () => {
       className={`${isScrolled && 'bg-black'} fixed top-0 z-50 flex w-full items-center justify-between p-4 px-4 transition-all lg:px-16 lg:py-4`}
     >
       <div className='flex items-center space-x-2 md:space-x-8'>
-        <Logo />
+        <Link href='/'>
+          <Logo />
+        </Link>
         <NavLinks />
       </div>
       <div className='flex items-center space-x-2 md:space-x-8'>
