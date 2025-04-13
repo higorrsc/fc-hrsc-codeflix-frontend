@@ -2,17 +2,17 @@ import { Header } from '@/components/Header';
 import { MovieCard } from '@/components/movie/Card';
 import { searchMovies } from '@/services/MovieService';
 
-export interface SearchPageParams {
+export interface SearchPageProps {
   title?: string;
   genre?: string;
 }
 
-export interface SearchPageProps {
-  searchParams: SearchPageParams;
-}
-
-export default async function SearchPage({ searchParams }: SearchPageProps) {
-  const { title, genre } = searchParams;
+export default async function SearchPage({
+  searchParams,
+}: {
+  searchParams: SearchPageProps;
+}) {
+  const { title, genre } = searchParams || {};
   const movies = await searchMovies(title, genre);
 
   if (movies.length === 0) {
