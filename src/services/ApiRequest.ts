@@ -16,11 +16,16 @@ export const defaultOptions: RequestOptions = {
 };
 
 export function buildQueryString(param: ApiQueryParams) {
-  const queryString = Object.keys(param)
-    .filter(([, value]) => value !== undefined)
-    .map(([key, value]) => [key, encodeURIComponent(String(value))]);
+  const searchParams = new URLSearchParams();
 
-  return `?${new URLSearchParams(Object.fromEntries(queryString)).toString()}`;
+  Object.entries(param).forEach(([key, value]) => {
+    if (value !== undefined && value !== null) {
+      searchParams.append(key, String(value));
+    }
+  });
+
+  const queryString = searchParams.toString();
+  return queryString ? `?${queryString}` : '';
 }
 
 export async function apiRequest<T>(
