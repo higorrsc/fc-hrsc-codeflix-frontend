@@ -7,7 +7,8 @@ export async function POST(req: NextRequest) {
     console.log('email: ' + email, 'password: ' + password);
     return new NextResponse('It works');
   } catch (err) {
-    console.error(err);
-    return new NextResponse(err.message, { status: 400 });
+    const error = err as Error;
+    console.error(error);
+    return new NextResponse(error.message, { status: 400 });
   }
 }
