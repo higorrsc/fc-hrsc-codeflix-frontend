@@ -10,9 +10,9 @@ export interface SearchPageProps {
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams: SearchPageProps;
+  searchParams: Promise<SearchPageProps>;
 }) {
-  const { title, genre } = searchParams || {};
+  const { title, genre } = await searchParams;
   const movies = await searchMovies(title, genre);
 
   if (movies.length === 0) {

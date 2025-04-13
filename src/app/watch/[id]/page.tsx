@@ -7,8 +7,12 @@ export interface WatchPageProps {
     id: string;
   };
 }
-export default async function WatchPage({ params }: WatchPageProps) {
-  const watchParams = await params;
+export default async function WatchPage({
+  params,
+}: {
+  params: Promise<WatchPageProps>;
+}) {
+  const { params: watchParams } = await params;
   const movie = await getMovieById(watchParams.id);
 
   if (!movie) {
